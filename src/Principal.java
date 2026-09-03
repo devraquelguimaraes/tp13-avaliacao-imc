@@ -16,6 +16,7 @@ public class Principal {
 			 exibirCabecalho(); // <== METODO COMPARTILHADO (ponto de conflito)
 			 exibirMenu();
 			 opcao = scan.nextInt();
+				scan.nextLine();
 			 switch (opcao) {
 			 	case 1: quantidade = coletarDados(scan, nomes, pesos, alturas, imcs, quantidade); /* funcionalidade do Desenvolvedor A */ 
 			 		break;

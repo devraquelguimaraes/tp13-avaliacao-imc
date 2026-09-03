@@ -56,6 +56,8 @@ public class Principal {
     int obesidade2 = 0;
     int obesidade3 = 0;
 
+    double somaImcs = 0;
+
     System.out.println("\n--- RELATORIO INDIVIDUAL ---");
 
     for (int i = 0; i < quantidade; i++) {
@@ -67,6 +69,8 @@ public class Principal {
             imcs[i],
             classificacao
         );
+
+        somaImcs += imcs[i];
 
         switch (classificacao) {
             case "Abaixo do peso":
@@ -95,12 +99,15 @@ public class Principal {
         }
     }
 
-    System.out.println("\n--- CONTAGEM POR CATEGORIA ---");
+    double imcMedio = somaImcs / quantidade;
+
+    System.out.println("\n--- PERFIL DO GRUPO ---");
     System.out.println("Abaixo do peso: " + abaixoPeso);
     System.out.println("Peso normal: " + pesoNormal);
     System.out.println("Sobrepeso: " + sobrepeso);
     System.out.println("Obesidade grau I: " + obesidade1);
     System.out.println("Obesidade grau II: " + obesidade2);
     System.out.println("Obesidade grau III: " + obesidade3);
+    System.out.printf("IMC medio do grupo: %.2f%n", imcMedio);
 }
 }

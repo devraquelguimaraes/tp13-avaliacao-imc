@@ -44,5 +44,22 @@ public class Principal {
         return "Obesidade grau III";
     }
     }
-    
+    public static void exibirRelatorio(
+        String[] nomes,
+        double[] imcs,
+        int quantidade) {
+
+    System.out.println("\n--- RELATORIO INDIVIDUAL ---");
+
+    for (int i = 0; i < quantidade; i++) {
+        String classificacao = classificarImc(imcs[i]);
+
+        System.out.printf(
+            "Nome: %s | IMC: %.2f | Classificacao: %s%n",
+            nomes[i],
+            imcs[i],
+            classificacao
+        );
+    }
+}
 }

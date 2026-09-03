@@ -40,8 +40,47 @@ public class Principal {
 			 System.out.print("Escolha: ");
 	}
 		 
-		 public static void coletaDados() {
-			 
+		 public static int coletarDados(Scanner scan,String[] nomes,double[] pesos,double[] alturas,double[] imcs,int quantidade) {
+
+			if (quantidade >= nomes.length) 
+			{
+				System.out.println("Capacidade máxima atingida!");
+				return quantidade;
+			}
+
+			System.out.print("Digite o nome: ");
+			String nome = scan.nextLine();
+
+			double peso;
+
+			do {
+				System.out.print("Peso em kg: ");
+				peso = scan.nextDouble();
+
+				if (peso <= 0 || peso > 500) 
+				{
+					System.out.println("Informe um peso válido.");
+				}
+			} while (peso <= 0 || peso > 500);
+
+		double altura;
+
+			do {
+				System.out.print("Altura em metros: ");
+				altura = scan.nextDouble();
+
+					if (altura <= 0 || altura > 3) {
+						System.out.println("Informe uma altura válida.");
+					}
+			} while (altura <= 0 || altura > 3);
+
+			nomes[quantidade] = nome;
+			pesos[quantidade] = peso;
+			alturas[quantidade] = altura;
+			imcs[quantidade] = peso / (altura*altura);
+
+		System.out.printf("Pessoa cadastrada! IMC: %.2f%n",imcs[quantidade]);
+		return quantidade + 1;
 	} 
 		 
 }

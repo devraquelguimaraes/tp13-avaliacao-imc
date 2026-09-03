@@ -77,10 +77,15 @@ public class Principal {
 			nomes[quantidade] = nome;
 			pesos[quantidade] = peso;
 			alturas[quantidade] = altura;
-			imcs[quantidade] = peso / (altura*altura);
+			imcs[quantidade] = calcularImc(peso, altura);
 
 		System.out.printf("Pessoa cadastrada! IMC: %.2f%n",imcs[quantidade]);
 		return quantidade + 1;
-	} 
+	}
+	
+	public static double calcularImc(double peso, double altura) 
+	{
+		return peso / (altura * altura);
+	}
 		 
 }

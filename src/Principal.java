@@ -3,6 +3,14 @@ import java.util.Scanner;
 public class Principal {
 	public static void main(String[] args) {
 		 Scanner scan = new Scanner(System.in);
+
+		 String[] nomes = new String[5];
+		 double[] pesos = new double[5];
+		 double[] alturas = new double[5];
+		 double[] imcs = new double[5];
+
+		 int quantidade = 0;
+
 		 int opcao;
 		 do {
 			 exibirCabecalho(); // <== METODO COMPARTILHADO (ponto de conflito)

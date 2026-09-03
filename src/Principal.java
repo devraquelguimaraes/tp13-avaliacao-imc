@@ -17,7 +17,7 @@ public class Principal {
 			 exibirMenu();
 			 opcao = scan.nextInt();
 			 switch (opcao) {
-			 	case 1: System.out.println("Coleta de dados"); /* funcionalidade do Desenvolvedor A */ 
+			 	case 1: quantidade = coletarDados(scan, nomes, pesos, alturas, imcs, quantidade); /* funcionalidade do Desenvolvedor A */ 
 			 		break;
 			 	case 2: System.out.println("Classificação, categoria e relatório");/* funcionalidade do Desenvolvedor B */ 
 			 		break;

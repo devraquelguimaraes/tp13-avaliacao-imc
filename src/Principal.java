@@ -49,6 +49,13 @@ public class Principal {
         double[] imcs,
         int quantidade) {
 
+    int abaixoPeso = 0;
+    int pesoNormal = 0;
+    int sobrepeso = 0;
+    int obesidade1 = 0;
+    int obesidade2 = 0;
+    int obesidade3 = 0;
+
     System.out.println("\n--- RELATORIO INDIVIDUAL ---");
 
     for (int i = 0; i < quantidade; i++) {
@@ -60,6 +67,40 @@ public class Principal {
             imcs[i],
             classificacao
         );
+
+        switch (classificacao) {
+            case "Abaixo do peso":
+                abaixoPeso++;
+                break;
+
+            case "Peso normal":
+                pesoNormal++;
+                break;
+
+            case "Sobrepeso":
+                sobrepeso++;
+                break;
+
+            case "Obesidade grau I":
+                obesidade1++;
+                break;
+
+            case "Obesidade grau II":
+                obesidade2++;
+                break;
+
+            case "Obesidade grau III":
+                obesidade3++;
+                break;
+        }
     }
+
+    System.out.println("\n--- CONTAGEM POR CATEGORIA ---");
+    System.out.println("Abaixo do peso: " + abaixoPeso);
+    System.out.println("Peso normal: " + pesoNormal);
+    System.out.println("Sobrepeso: " + sobrepeso);
+    System.out.println("Obesidade grau I: " + obesidade1);
+    System.out.println("Obesidade grau II: " + obesidade2);
+    System.out.println("Obesidade grau III: " + obesidade3);
 }
 }

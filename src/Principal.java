@@ -49,6 +49,11 @@ public class Principal {
         double[] imcs,
         int quantidade) {
 
+            if (quantidade == 0) {
+    System.out.println("Nenhuma pessoa cadastrada.");
+    return;
+}
+
     int abaixoPeso = 0;
     int pesoNormal = 0;
     int sobrepeso = 0;
